@@ -12,7 +12,7 @@ function cariModus(arr) {
     }
   }
   var values = Object.values(dict);
-  unique = [...new Set(values)]; // membuat array dengan nilai frekuensi unik 
+  var unique = [...new Set(values)]; // membuat array dengan nilai frekuensi unik 
 
   if (Object.keys(dict).length == 1 || unique.length === 1) { //fungsi akan return -1 apabila  modus tidak ditemukan dan array hanya terdiri dari satu angka
     return -1;

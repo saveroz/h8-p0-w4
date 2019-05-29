@@ -10,9 +10,14 @@ function angkaPrima(angka) {
         return false
       }
     }
+    if (Math.sqrt(angka) % 1 === 0) {
+      return false
+    }
     return true
   }
+
 }
+
 
 // TEST CASES
 console.log(angkaPrima(3)); // true
@@ -20,3 +25,5 @@ console.log(angkaPrima(7)); // true
 console.log(angkaPrima(6)); // false
 console.log(angkaPrima(23)); // true
 console.log(angkaPrima(33)); // false
+console.log(angkaPrima(121)); // false
+console.log(angkaPrima(143)); //false

@@ -1,5 +1,15 @@
 function changeMe(arr) {
     // you can only write your code here!
+    for (let person of arr){
+      
+      var biodata={
+        firstName:person[0],
+        lastName:person[1],
+        gender:person[2],
+        age:person[3] && person[3] < 2019 ? 2019-person[3] :'Invalid Birth Year'
+      }
+      console.log(biodata);
+    }
   }
   
   // TEST CASES
