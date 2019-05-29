@@ -1,7 +1,7 @@
 function cariMedian(arr) {
   // you can only write your code here!
-  arrayLength=arr.length;
-  median=Math.floor(arrayLength/2);
+  var arrayLength=arr.length;
+  var median=Math.floor(arrayLength/2);
   if (arrayLength%2===0){
       return (arr[median]+arr[median-1])/2;
   }
