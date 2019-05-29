@@ -1,5 +1,6 @@
 function changeMe(arr) {
     // you can only write your code here!
+    var num=1;
     for (let person of arr){
       
       var biodata={
@@ -8,6 +9,7 @@ function changeMe(arr) {
         gender:person[2],
         age:person[3] && person[3] < 2019 ? 2019-person[3] :'Invalid Birth Year'
       }
+      console.log(`${num}. ${person[0]} ${person[1]}:`)
       console.log(biodata);
     }
   }
