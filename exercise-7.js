@@ -1,10 +1,10 @@
 function urutkanAbjad(str) {
     // you can only write your code here!
-    str=str.split("");
-    str=str.sort();
-    str=str.join(""); 
+    var sortLetter=str.split("");
+    sortLetter=sortLetter.sort();
+    sortLetter=sortLetter.join(""); 
     
-    return str
+    return sortLetter
   }
   
   // TEST CASES
