@@ -4,17 +4,29 @@ function countProfit(shoppers) {
                        ['Sweater Uniklooh', 175000, 1]
                      ];
     // you can only write your code here!
+    if (shoppers.length===0){
+      return []
+    }
+    
+    
     var stockBarang=[];
+    for(let barang of listBarang){
+      var detail={}
+      detail['product']=barang[0];
+      detail['shoppers']=[]
+      detail['leftOver']=barang[2]
+      detail['totalProfit']=0;
+      for (let shopper of shoppers){
+        if(shopper['product']===barang[0] && detail['leftOver']-shopper['amount']>=0){
+          detail['shoppers'].push(shopper['name']);
+          detail['leftOver']-=shopper['amount'];
+          detail['totalProfit']+=shopper['amount']*barang[1]
+        }
 
-    for (let item of listBarang){
-      var detail={};
-      detail['product']=item[0];
-      detail['shoppers']='ana';
-      detail['letftOver']=item[2];
-      detail['totalProfit']=item[1];
+      }
       stockBarang.push(detail);
     }
-    return stockBarang
+    return stockBarang;
   }
   
   // TEST CASES
@@ -32,7 +44,7 @@ function countProfit(shoppers) {
   //   leftOver: 1,
   //   totalProfit: 0 } ]
   
-  //console.log(countProfit([{name: 'Windi', product: 'Sepatu Stacattu', amount: 8}, {name: 'Vanessa', product: 'Sepatu Stacattu', amount: 10}, {name: 'Rani', product: 'Sweater Uniklooh', amount: 1}, {name: 'Devi', product: 'Baju Zoro', amount: 1}, {name: 'Lisa', product: 'Baju Zoro', amount: 1}]));
+  console.log(countProfit([{name: 'Windi', product: 'Sepatu Stacattu', amount: 8}, {name: 'Vanessa', product: 'Sepatu Stacattu', amount: 10}, {name: 'Rani', product: 'Sweater Uniklooh', amount: 1}, {name: 'Devi', product: 'Baju Zoro', amount: 1}, {name: 'Lisa', product: 'Baju Zoro', amount: 1}]));
   // [ { product: 'Sepatu Stacattu',
   //     shoppers: [ 'Windi' ],
   //     leftOver: 2,
@@ -45,7 +57,7 @@ function countProfit(shoppers) {
   //     shoppers: [ 'Rani' ],
   //     leftOver: 0,
   //     totalProfit: 175000 } ]
- // console.log(countProfit([{name: 'Windi', product: 'Sepatu Naiki', amount: 5}]));
+  console.log(countProfit([{name: 'Windi', product: 'Sepatu Naiki', amount: 5}]));
   // [ { product: 'Sepatu Stacattu',
   //     shoppers: [],
   //     leftOver: 10,
@@ -58,4 +70,4 @@ function countProfit(shoppers) {
   //     shoppers: [],
   //     leftOver: 1,
   //     totalProfit: 0 } ]
-  //console.log(countProfit([])); //[]
+  console.log(countProfit([])); //[]

@@ -15,18 +15,21 @@ function checkAB(num) {
     if (A_loc.length===0 || B_loc.length===0){
         return false;
     }
-    else if (Math.max(...A_loc)>Math.max(...B_loc)){
-        distance=Math.max(...A_loc)-Math.min(...B_loc);
+    for (let loc of B_loc){
+        for(let loc2 of A_loc){
+            distance=Math.abs(loc-loc2)-1
+            if (distance===3){
+                return true
+            }
+        }
     }
-    else{
-        distance=Math.max(...B_loc)-Math.min(...A_loc);
-    }
-    return distance>=3;
+
+    return false;
 }
 
 // TEST CASES
 console.log(checkAB('lane borrowed')); // true
 console.log(checkAB('i am sick')); // false
-console.log(checkAB('you are boring')); // true*/
+console.log(checkAB('you are boring')); // true
 console.log(checkAB('barbarian')); // true
 console.log(checkAB('bacon and meat')); // false 

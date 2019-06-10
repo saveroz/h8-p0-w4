@@ -1,6 +1,30 @@
 function graduates (students) {
     // Code disini
+    var classes = [];
+    for (let student of students) {
+      if (!(classes.includes(student['class']))) {
+        classes.push(student['class'])
+      }
+    }
+    var result={}
+
+  for (let animal of classes) {
+    result[animal]=[]
+    var person={}
+
+    for (let student of students) {
+      if (animal === student['class'] && student['score']>75) {
+        person['name']=student['name']
+        person['score']=student['score']
+        result[animal].push(person)
+        person={}
+      }
+    }
   }
+  return result
+}
+  
+
   
   console.log(graduates([
     {
