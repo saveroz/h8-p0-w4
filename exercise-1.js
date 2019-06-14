@@ -1,6 +1,6 @@
 function angkaPrima(angka) {
   // you can only write your code here!
-  for (var i = 2; i < Math.floor(angka); i++) {
+  for (var i = 2; i < angka; i++) {
       if (angka % i=== 0) {
         return false
       }
@@ -15,3 +15,4 @@ console.log(angkaPrima(6)); // false
 console.log(angkaPrima(23)); // true
 console.log(angkaPrima(33)); // false
 console.log(angkaPrima(121)); // false
+console.log(angkaPrima(11));// true
