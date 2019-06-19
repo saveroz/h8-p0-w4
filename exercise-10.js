@@ -1,6 +1,8 @@
 function changeMe(arr) {
   // you can only write your code here!
-
+if (arr.length===0){
+  return ""
+}
   var num = 1;
   for (let person of arr) {
 
