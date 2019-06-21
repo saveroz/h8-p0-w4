@@ -1,8 +1,9 @@
 function changeMe(arr) {
   // you can only write your code here!
 if (arr.length===0){
-  return ""
+  console.log("")
 }
+else{
   var num = 1;
   for (let person of arr) {
 
@@ -15,7 +16,7 @@ if (arr.length===0){
     console.log(`${num}. ${person[0]} ${person[1]}:`)
     console.log(biodata);
     num++
-  }
+  }}
 }
 
 // TEST CASES
